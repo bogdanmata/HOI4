@@ -3,28 +3,28 @@ operations = {
         icon = generic_political_discourse
 
         allowed = {
-            # Everyone
+            if = {
+                limit = {
+                    any_owned_state = {
+                        NOT = {is_core_of = ROOT}
+                    }
+                }
+            }
         }
 
         available = {
-            any_owned_state = {
+            if = {
                 limit = {
-                    is_fully_controlled_by = ROOT
-                    is_owned_by = ROOT
-                    NOT = {is_core_of = ROOT}
-				}
+                    any_owned_state = {
+                        NOT = {is_core_of = ROOT}
+                    }
+                }
             }
         }
 
-        visible = {
-            any_owned_state = {
-                limit = {
-                    is_fully_controlled_by = ROOT
-                    is_owned_by = ROOT
-                    NOT = {is_core_of = ROOT}
-				}
-            }
-        }
+		visible = {
+			always = yes
+		}
 
         fire_only_once = no
         cost = 150
