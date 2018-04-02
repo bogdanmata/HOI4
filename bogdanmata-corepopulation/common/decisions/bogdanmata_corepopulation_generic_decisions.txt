@@ -1,0 +1,47 @@
+operations = {
+    convert_to_core_population = {
+        icon = generic_political_discourse
+
+        allowed = {
+            # Everyone
+        }
+
+        available = {
+            any_owned_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    is_owned_by = ROOT
+                    NOT = {is_core_of = ROOT}
+				}
+            }
+        }
+
+        visible = {
+            any_owned_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    is_owned_by = ROOT
+                    NOT = {is_core_of = ROOT}
+				}
+            }
+        }
+
+        fire_only_once = no
+        cost = 150
+
+        complete_effect = {
+            random_owned_state = {
+                limit = {
+                    is_fully_controlled_by = ROOT
+                    is_owned_by = ROOT
+                    NOT = {is_core_of = ROOT}
+				}
+				add_core_of = ROOT
+            }
+        }
+
+        ai_will_do = {
+            factor = 0
+        }
+    }
+}
